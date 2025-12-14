@@ -1,0 +1,893 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:id="@+id/lockScreenLayout">
+
+    <!-- Date Display at Top -->
+    <LinearLayout
+        android:id="@+id/dateContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/dateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Monday, January 1"
+            android:textSize="32sp"
+            android:textColor="#FFFFFF"
+            android:fontFamily="sans-serif"
+            android:textDirection="anyRtl"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+    <!-- Flip Clock Container -->
+    <ScrollView
+        android:id="@+id/clockScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/dateContainer"
+        android:layout_above="@id/notificationContainer"
+        android:fillViewport="true"
+        android:background="#000000"
+        android:scrollbars="none">
+
+    <LinearLayout
+        android:id="@+id/clockContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="#000000">
+
+        <!-- Hour Tens -->
+        <TextView
+            android:id="@+id/hourTens"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="200sp"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:fontFamily="monospace"
+            android:layout_marginEnd="12dp" />
+
+        <!-- Hour Ones -->
+        <TextView
+            android:id="@+id/hourOnes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="200sp"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:fontFamily="monospace"
+            android:layout_marginEnd="24dp" />
+
+        <!-- Colon -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=":"
+            android:textSize="140sp"
+            android:textColor="#FFFFFF"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="monospace" />
+
+        <!-- Minute Tens -->
+        <TextView
+            android:id="@+id/minuteTens"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="200sp"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:fontFamily="monospace"
+            android:layout_marginEnd="12dp" />
+
+        <!-- Minute Ones -->
+        <TextView
+            android:id="@+id/minuteOnes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="200sp"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:fontFamily="monospace" />
+
+    </LinearLayout>
+
+    </ScrollView>
+
+    <!-- Prayer Times Overlay (Hidden by default, shown on single tap) -->
+    <RelativeLayout
+        android:id="@+id/prayerTimesOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/prayer_gradient_bg"
+        android:visibility="gone"
+        android:elevation="10dp">
+
+        <!-- Top Bar with Next Prayer -->
+        <LinearLayout
+            android:id="@+id/nextPrayerContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/next_prayer_card_bg"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="اگلی نماز"
+                android:textSize="14sp"
+                android:textColor="#87CEEB"
+                android:fontFamily="sans-serif"
+                android:textDirection="anyRtl"
+                android:layout_marginEnd="12dp" />
+
+            <TextView
+                android:id="@+id/nextPrayerName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ظہر"
+                android:textSize="24sp"
+                android:textColor="#FFD700"
+                android:fontFamily="sans-serif"
+                android:textDirection="anyRtl"
+                android:textStyle="bold"
+                android:layout_marginEnd="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⏱"
+                android:textSize="20sp"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:id="@+id/nextPrayerCountdown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2h:30m"
+                android:textSize="24sp"
+                android:textColor="#FFFFFF"
+                android:fontFamily="monospace"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/nextPrayerLabel"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <!-- Day/Night Info - Right Side -->
+        <LinearLayout
+            android:id="@+id/leftInfoContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/info_card_bg"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/leftInfoValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="06:30 am"
+                android:textSize="20sp"
+                android:textColor="#FFFFFF"
+                android:fontFamily="monospace"
+                android:textStyle="bold"
+                android:layout_marginEnd="10dp" />
+
+            <TextView
+                android:id="@+id/leftInfoLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="طلوع آفتاب"
+                android:textSize="14sp"
+                android:textColor="#87CEEB"
+                android:fontFamily="sans-serif"
+                android:textDirection="anyRtl" />
+
+        </LinearLayout>
+
+        <!-- Prayer Times Center Content -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp">
+
+        <!-- All 5 prayers in a horizontal row (RTL for Urdu) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layoutDirection="rtl"
+            android:gravity="center"
+            android:layout_marginTop="40dp"
+            android:weightSum="5">
+
+            <!-- Fajr -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/prayer_card_bg"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginStart="3dp"
+                android:layout_marginEnd="3dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🌅"
+                    android:textSize="28sp"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:id="@+id/prayerNameFajr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="فجر"
+                    android:textSize="24sp"
+                    android:textColor="#FFB6C1"
+                    android:fontFamily="sans-serif"
+                    android:textDirection="anyRtl"
+                    android:textStyle="bold"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp" />
+
+                <TextView
+                    android:id="@+id/prayerTimeFajr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="05:30 am"
+                    android:textSize="20sp"
+                    android:textColor="#FFFFFF"
+                    android:fontFamily="monospace"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Dhuhr -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/prayer_card_bg"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginStart="3dp"
+                android:layout_marginEnd="3dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="☀️"
+                    android:textSize="28sp"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:id="@+id/prayerNameDhuhr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ظہر"
+                    android:textSize="24sp"
+                    android:textColor="#FFD700"
+                    android:fontFamily="sans-serif"
+                    android:textDirection="anyRtl"
+                    android:textStyle="bold"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp" />
+
+                <TextView
+                    android:id="@+id/prayerTimeDhuhr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12:30 pm"
+                    android:textSize="20sp"
+                    android:textColor="#FFFFFF"
+                    android:fontFamily="monospace"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Asr -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/prayer_card_bg"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginStart="3dp"
+                android:layout_marginEnd="3dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🌤"
+                    android:textSize="28sp"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:id="@+id/prayerNameAsr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="عصر"
+                    android:textSize="24sp"
+                    android:textColor="#FFA500"
+                    android:fontFamily="sans-serif"
+                    android:textDirection="anyRtl"
+                    android:textStyle="bold"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp" />
+
+                <TextView
+                    android:id="@+id/prayerTimeAsr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="03:45 pm"
+                    android:textSize="20sp"
+                    android:textColor="#FFFFFF"
+                    android:fontFamily="monospace"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Maghrib -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/prayer_card_bg"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginStart="3dp"
+                android:layout_marginEnd="3dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🌆"
+                    android:textSize="28sp"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:id="@+id/prayerNameMaghrib"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="مغرب"
+                    android:textSize="24sp"
+                    android:textColor="#FF6B6B"
+                    android:fontFamily="sans-serif"
+                    android:textDirection="anyRtl"
+                    android:textStyle="bold"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp" />
+
+                <TextView
+                    android:id="@+id/prayerTimeMaghrib"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="06:15 pm"
+                    android:textSize="20sp"
+                    android:textColor="#FFFFFF"
+                    android:fontFamily="monospace"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Isha -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/prayer_card_bg"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginStart="3dp"
+                android:layout_marginEnd="3dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🌙"
+                    android:textSize="28sp"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:id="@+id/prayerNameIsha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="عشاء"
+                    android:textSize="24sp"
+                    android:textColor="#9370DB"
+                    android:fontFamily="sans-serif"
+                    android:textDirection="anyRtl"
+                    android:textStyle="bold"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp" />
+
+                <TextView
+                    android:id="@+id/prayerTimeIsha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="07:45 pm"
+                    android:textSize="20sp"
+                    android:textColor="#FFFFFF"
+                    android:fontFamily="monospace"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <!-- Weather Overlay (Hidden by default, shown on second tap) -->
+    <ScrollView
+        android:id="@+id/weatherOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/weather_gradient_bg"
+        android:visibility="gone"
+        android:elevation="10dp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <!-- Loading Progress Indicator -->
+            <LinearLayout
+                android:id="@+id/weatherLoadingContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/weather_card_bg"
+                android:padding="16dp"
+                android:visibility="gone"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/weatherLoadingText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="موسم لوڈ ہو رہا ہے..."
+                    android:textSize="14sp"
+                    android:textColor="#FFFFFF"
+                    android:fontFamily="sans-serif"
+                    android:textDirection="anyRtl"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/weatherLoadingProgress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="API 1 - Try 1/2"
+                    android:textSize="12sp"
+                    android:textColor="#87CEEB"
+                    android:fontFamily="monospace"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center" />
+
+            </LinearLayout>
+
+            <!-- Current Weather Card - Horizontal Compact -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/weather_card_bg"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/weatherIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="☀️"
+                    android:textSize="36sp"
+                    android:layout_marginEnd="10dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/weatherCityName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="شہر"
+                        android:textSize="12sp"
+                        android:textColor="#87CEEB"
+                        android:fontFamily="sans-serif"
+                        android:textDirection="anyRtl" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/weatherTemp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="25°"
+                            android:textSize="32sp"
+                            android:textColor="#FFFFFF"
+                            android:fontFamily="monospace"
+                            android:textStyle="bold"
+                            android:layout_marginEnd="10dp" />
+
+                        <TextView
+                            android:id="@+id/weatherCondition"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="صاف"
+                            android:textSize="14sp"
+                            android:textColor="#FFD700"
+                            android:fontFamily="sans-serif"
+                            android:textDirection="anyRtl" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Health Alert -->
+                <TextView
+                    android:id="@+id/weatherHealthAlert"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="موسم موزوں ہے"
+                    android:textSize="11sp"
+                    android:textColor="#4CAF50"
+                    android:fontFamily="sans-serif"
+                    android:textDirection="anyRtl"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:background="@drawable/alert_card_bg" />
+
+            </LinearLayout>
+
+            <!-- Weather Details Grid - 4 Columns -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="6dp"
+                android:weightSum="4">
+
+                <!-- Column 1 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="3dp">
+
+                    <include layout="@layout/weather_detail_item"
+                        android:id="@+id/weatherDetailFeelsLike" />
+                    <include layout="@layout/weather_detail_item"
+                        android:id="@+id/weatherDetailHumidity" />
+
+                </LinearLayout>
+
+                <!-- Column 2 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginEnd="3dp">
+
+                    <include layout="@layout/weather_detail_item"
+                        android:id="@+id/weatherDetailWind" />
+                    <include layout="@layout/weather_detail_item"
+                        android:id="@+id/weatherDetailPressure" />
+
+                </LinearLayout>
+
+                <!-- Column 3 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginEnd="3dp">
+
+                    <include layout="@layout/weather_detail_item"
+                        android:id="@+id/weatherDetailUV" />
+                    <include layout="@layout/weather_detail_item"
+                        android:id="@+id/weatherDetailVisibility" />
+
+                </LinearLayout>
+
+                <!-- Column 4 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="3dp">
+
+                    <include layout="@layout/weather_detail_item"
+                        android:id="@+id/weatherDetailDewPoint" />
+                    <include layout="@layout/weather_detail_item"
+                        android:id="@+id/weatherDetailClouds" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- 7-Day Forecast -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7 دن کی پیشن گوئی"
+                android:textSize="14sp"
+                android:textColor="#FFD700"
+                android:fontFamily="sans-serif"
+                android:textDirection="anyRtl"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/forecastContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="7"
+                android:layoutDirection="rtl">
+
+                <!-- Forecast items will be added programmatically -->
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/weatherLastUpdated"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="اپ ڈیٹ: 12:00 pm"
+                android:textSize="10sp"
+                android:textColor="#AAAAAA"
+                android:fontFamily="sans-serif"
+                android:textDirection="anyRtl"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="6dp" />
+
+            <TextView
+                android:id="@+id/weatherNextUpdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="اگلی اپ ڈیٹ: --:--"
+                android:textSize="10sp"
+                android:textColor="#AAAAAA"
+                android:fontFamily="sans-serif"
+                android:textDirection="anyRtl"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="8dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- Notification Icons Area -->
+    <LinearLayout
+        android:id="@+id/notificationContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+    </LinearLayout>
+
+    <!-- Brightness Indicator Bar (Horizontal) -->
+    <LinearLayout
+        android:id="@+id/brightnessIndicator"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:background="#CC000000"
+        android:padding="20dp"
+        android:visibility="gone"
+        android:elevation="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="☀️"
+                android:textSize="28sp"
+                android:layout_marginEnd="12dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="روشنی"
+                android:textSize="18sp"
+                android:textColor="#FFFFFF"
+                android:fontFamily="sans-serif"
+                android:textDirection="anyRtl" />
+
+            <TextView
+                android:id="@+id/brightnessPercentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="50%"
+                android:textSize="22sp"
+                android:textColor="#FFD700"
+                android:fontFamily="monospace"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/brightnessProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="12dp"
+            android:progress="50"
+            android:max="100"
+            android:progressTint="#FFD700"
+            android:progressBackgroundTint="#444444" />
+
+    </LinearLayout>
+
+    <!-- Volume Indicator Bar (Horizontal) -->
+    <LinearLayout
+        android:id="@+id/volumeIndicator"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:background="#CC000000"
+        android:padding="20dp"
+        android:visibility="gone"
+        android:elevation="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🔊"
+                android:textSize="28sp"
+                android:layout_marginEnd="12dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="آواز"
+                android:textSize="18sp"
+                android:textColor="#FFFFFF"
+                android:fontFamily="sans-serif"
+                android:textDirection="anyRtl" />
+
+            <TextView
+                android:id="@+id/volumePercentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="8/15"
+                android:textSize="22sp"
+                android:textColor="#87CEEB"
+                android:fontFamily="monospace"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/volumeProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="12dp"
+            android:progress="8"
+            android:max="15"
+            android:progressTint="#87CEEB"
+            android:progressBackgroundTint="#444444" />
+
+    </LinearLayout>
+
+    <!-- Dark Overlay for extra dimming beyond 0% brightness -->
+    <View
+        android:id="@+id/darkOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000"
+        android:alpha="0"
+        android:elevation="100dp"
+        android:clickable="false"
+        android:focusable="false" />
+
+</RelativeLayout>

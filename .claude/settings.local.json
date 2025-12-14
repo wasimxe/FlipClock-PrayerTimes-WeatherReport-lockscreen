@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell -Command \"[System.Environment]::SetEnvironmentVariable(''JAVA_HOME'',''D:\\workspace\\android\\jdk\\jdk-17.0.2'',''Process''); .\\gradlew.bat assembleDebug\")",
+      "Bash(adb install:*)",
+      "Bash(adb uninstall:*)",
+      "Bash(powershell -Command:*)",
+      "Bash(tree:*)",
+      "Bash(find:*)",
+      "Bash(adb devices:*)",
+      "Bash(adb shell pm list packages:*)",
+      "Bash(findstr:*)",
+      "Bash(adb shell am start:*)",
+      "Bash(adb shell:*)",
+      "Bash(adb pull:*)",
+      "Bash(adb exec-out:*)",
+      "Bash(git remote set-url:*)",
+      "Bash(git fetch:*)",
+      "Bash(git checkout:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
