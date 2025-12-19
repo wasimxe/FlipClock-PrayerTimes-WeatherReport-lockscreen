@@ -1,9 +1,9 @@
-#Sat Dec 13 19:37:22 PKT 2025
-base.2=D\:\\workspace\\android\\Projects\\aod\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\9\\classes.dex
+#Fri Dec 19 11:34:22 PKT 2025
+base.2=D\:\\workspace\\android\\Projects\\FlipClock-PrayerTimes-WeatherReport-lockscreen\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\9\\classes.dex
 path.2=9/classes.dex
-base.1=D\:\\workspace\\android\\Projects\\aod\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.1=D\:\\workspace\\android\\Projects\\FlipClock-PrayerTimes-WeatherReport-lockscreen\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 path.1=0/classes.dex
-base.0=D\:\\workspace\\android\\Projects\\aod\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.0=D\:\\workspace\\android\\Projects\\FlipClock-PrayerTimes-WeatherReport-lockscreen\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex

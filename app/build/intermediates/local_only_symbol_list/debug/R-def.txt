@@ -2,6 +2,10 @@ R_DEF: Internal format may change without notice
 local
 color black
 color gray
+color radio_button_color
+color radio_text_color
+color switch_thumb_color
+color switch_track_color
 color white
 drawable alert_card_bg
 drawable flip_digit_bg
@@ -9,6 +13,7 @@ drawable info_card_bg
 drawable next_prayer_card_bg
 drawable prayer_card_bg
 drawable prayer_gradient_bg
+drawable radio_button_bg
 drawable status_indicator
 drawable weather_card_bg
 drawable weather_gradient_bg
@@ -42,6 +47,7 @@ id leftInfoLabel
 id leftInfoValue
 id locationText
 id lockScreenLayout
+id madhabRadioGroup
 id minuteOnes
 id minuteTens
 id nextPrayerContainer
@@ -61,6 +67,8 @@ id prayerTimeFajr
 id prayerTimeIsha
 id prayerTimeMaghrib
 id prayerTimesOverlay
+id radioHanafi
+id radioShafi
 id rotationSwitch
 id seekBlue
 id seekGreen
@@ -93,6 +101,7 @@ id weatherLoadingProgress
 id weatherLoadingText
 id weatherNextUpdate
 id weatherOverlay
+id weatherSwitch
 id weatherTemp
 layout activity_lockscreen
 layout activity_main

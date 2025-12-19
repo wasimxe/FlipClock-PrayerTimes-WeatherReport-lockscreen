@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- When radio button is selected (checked) - dark green text -->
+    <item android:color="#2E7D32" android:state_checked="true" />
+    <!-- When radio button is not selected (unchecked) - dark gray text -->
+    <item android:color="#616161" android:state_checked="false" />
+</selector>

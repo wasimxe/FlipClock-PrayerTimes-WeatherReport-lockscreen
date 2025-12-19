@@ -175,18 +175,26 @@ public class LockScreenActivity extends Activity {
         float latitude = prefs.getFloat("latitude", 0);
         float longitude = prefs.getFloat("longitude", 0);
         if (latitude != 0 && longitude != 0) {
-            prayerCalculator = new PrayerTimeCalculator(latitude, longitude);
+            // Get madhab setting (0 = Shafi, 1 = Hanafi)
+            int madhab = prefs.getInt("madhab", 0);
+            prayerCalculator = new PrayerTimeCalculator(latitude, longitude, madhab);
             updatePrayerTimesDisplay();
 
-            // Load cached weather data first
-            currentWeatherData = WeatherData.loadFromPreferences(this);
-            if (currentWeatherData != null) {
-                updateWeatherDisplay();
-                android.util.Log.d("LockScreen", "Loaded cached weather data");
-            }
+            // Check if weather is enabled
+            boolean weatherEnabled = prefs.getBoolean("weather_enabled", true);
+            if (weatherEnabled) {
+                // Load cached weather data first
+                currentWeatherData = WeatherData.loadFromPreferences(this);
+                if (currentWeatherData != null) {
+                    updateWeatherDisplay();
+                    android.util.Log.d("LockScreen", "Loaded cached weather data");
+                }
 
-            // Fetch initial weather
-            fetchWeatherData(latitude, longitude);
+                // Fetch initial weather
+                fetchWeatherData(latitude, longitude);
+            } else {
+                android.util.Log.d("LockScreen", "Weather is disabled, skipping weather fetch");
+            }
         }
 
         // Setup battery monitor FIRST to check charging state before applying colors
@@ -248,14 +256,19 @@ public class LockScreenActivity extends Activity {
         }
 
         // Weather updater (check every hour if 24 hours have passed)
-        if (latitude != 0 && longitude != 0) {
+        // Only set up if weather is enabled
+        boolean weatherEnabledForUpdater = prefs.getBoolean("weather_enabled", true);
+        if (latitude != 0 && longitude != 0 && weatherEnabledForUpdater) {
             final float lat = latitude;
             final float lon = longitude;
             weatherUpdater = new Runnable() {
                 @Override
                 public void run() {
-                    fetchWeatherData(lat, lon); // Will only fetch if 24 hours have passed
-                    handler.postDelayed(this, 3600000); // Check again in 1 hour
+                    // Check if weather is still enabled before fetching
+                    if (prefs.getBoolean("weather_enabled", true)) {
+                        fetchWeatherData(lat, lon); // Will only fetch if 24 hours have passed
+                        handler.postDelayed(this, 3600000); // Check again in 1 hour
+                    }
                 }
             };
             handler.postDelayed(weatherUpdater, 3600000); // Start checking after 1 hour
@@ -629,8 +642,17 @@ public class LockScreenActivity extends Activity {
         // Cancel any auto-hide timer
         handler.removeCallbacks(autoHideOverlay);
 
+        // Check if weather is enabled
+        boolean weatherEnabled = prefs.getBoolean("weather_enabled", true);
+
         // Cycle: Clock (0) → Prayer (1) → Weather (2) → Clock (0)
+        // If weather disabled: Clock (0) → Prayer (1) → Clock (0)
         currentViewState = (currentViewState + 1) % 3;
+
+        // Skip weather view if disabled
+        if (currentViewState == 2 && !weatherEnabled) {
+            currentViewState = 0; // Go back to clock
+        }
 
         switch (currentViewState) {
             case 0: // Clock

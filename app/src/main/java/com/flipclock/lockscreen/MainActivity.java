@@ -23,6 +23,7 @@ import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -43,7 +44,8 @@ public class MainActivity extends AppCompatActivity {
     private View statusIndicator;
     private Button btnCustomColor;
     private LinearLayout permissionCard;
-    private SwitchCompat rotationSwitch, serviceToggle, volumeSwipeSwitch;
+    private SwitchCompat rotationSwitch, serviceToggle, volumeSwipeSwitch, weatherSwitch;
+    private RadioGroup madhabRadioGroup;
     private SeekBar brightnessLimitSeek;
     private TextView brightnessLimitValue;
     private Spinner fontSpinner;
@@ -85,6 +87,8 @@ public class MainActivity extends AppCompatActivity {
         fontSizeSeek = findViewById(R.id.fontSizeSeek);
         fontSizeValue = findViewById(R.id.fontSizeValue);
         locationText = findViewById(R.id.locationText);
+        weatherSwitch = findViewById(R.id.weatherSwitch);
+        madhabRadioGroup = findViewById(R.id.madhabRadioGroup);
 
         Button btnPreview = findViewById(R.id.btnPreview);
         Button btnGrantPermission = findViewById(R.id.btnGrantPermission);
@@ -101,6 +105,15 @@ public class MainActivity extends AppCompatActivity {
         rotationSwitch.setChecked(prefs.getBoolean("rotate_180", false));
         serviceToggle.setChecked(isServiceRunning(LockScreenService.class));
         volumeSwipeSwitch.setChecked(prefs.getBoolean("volume_swipe_enabled", true));
+        weatherSwitch.setChecked(prefs.getBoolean("weather_enabled", true));
+
+        // Setup madhab radio group (0 = Shafi, 1 = Hanafi)
+        int savedMadhab = prefs.getInt("madhab", 0);
+        if (savedMadhab == 1) {
+            madhabRadioGroup.check(R.id.radioHanafi);
+        } else {
+            madhabRadioGroup.check(R.id.radioShafi);
+        }
 
         // Setup brightness limit seekbar (default -5%)
         setupBrightnessLimitSeekBar();
@@ -119,6 +132,18 @@ public class MainActivity extends AppCompatActivity {
         volumeSwipeSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
             prefs.edit().putBoolean("volume_swipe_enabled", isChecked).apply();
             Toast.makeText(this, "Volume swipe " + (isChecked ? "enabled" : "disabled"), Toast.LENGTH_SHORT).show();
+        });
+
+        weatherSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            prefs.edit().putBoolean("weather_enabled", isChecked).apply();
+            Toast.makeText(this, "Weather " + (isChecked ? "enabled" : "disabled"), Toast.LENGTH_SHORT).show();
+        });
+
+        madhabRadioGroup.setOnCheckedChangeListener((group, checkedId) -> {
+            int madhab = (checkedId == R.id.radioHanafi) ? 1 : 0;
+            prefs.edit().putInt("madhab", madhab).apply();
+            String madhabName = (madhab == 1) ? "Hanafi" : "Shafi";
+            Toast.makeText(this, "Asr calculation: " + madhabName, Toast.LENGTH_SHORT).show();
         });
 
         serviceToggle.setOnCheckedChangeListener((buttonView, isChecked) -> {

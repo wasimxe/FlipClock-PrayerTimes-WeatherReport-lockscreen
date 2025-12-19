@@ -3,6 +3,7 @@ package com.flipclock.lockscreen;
 import com.batoulapps.adhan.CalculationMethod;
 import com.batoulapps.adhan.CalculationParameters;
 import com.batoulapps.adhan.Coordinates;
+import com.batoulapps.adhan.Madhab;
 import com.batoulapps.adhan.Prayer;
 import com.batoulapps.adhan.PrayerTimes;
 import com.batoulapps.adhan.SunnahTimes;
@@ -17,19 +18,29 @@ public class PrayerTimeCalculator {
 
     private double latitude;
     private double longitude;
+    private int madhab; // 0 = Shafi, 1 = Hanafi
     private PrayerTimes prayerTimes;
     private SunnahTimes sunnahTimes;
 
-    public PrayerTimeCalculator(double latitude, double longitude) {
+    public PrayerTimeCalculator(double latitude, double longitude, int madhab) {
         this.latitude = latitude;
         this.longitude = longitude;
+        this.madhab = madhab;
         calculatePrayerTimes();
+    }
+
+    private CalculationParameters getCalculationParameters() {
+        // Use University of Karachi calculation method (KARACHI)
+        CalculationParameters parameters = CalculationMethod.KARACHI.getParameters();
+        // Set madhab for Asr calculation
+        parameters.madhab = (madhab == 1) ? Madhab.HANAFI : Madhab.SHAFI;
+        return parameters;
     }
 
     private void calculatePrayerTimes() {
         Coordinates coordinates = new Coordinates(latitude, longitude);
         DateComponents dateComponents = DateComponents.from(new Date());
-        CalculationParameters parameters = CalculationMethod.MUSLIM_WORLD_LEAGUE.getParameters();
+        CalculationParameters parameters = getCalculationParameters();
 
         prayerTimes = new PrayerTimes(coordinates, dateComponents, parameters);
         sunnahTimes = new SunnahTimes(prayerTimes);
@@ -113,7 +124,7 @@ public class PrayerTimeCalculator {
 
                 Coordinates coordinates = new Coordinates(latitude, longitude);
                 DateComponents tomorrowDate = DateComponents.from(tomorrow.getTime());
-                CalculationParameters parameters = CalculationMethod.MUSLIM_WORLD_LEAGUE.getParameters();
+                CalculationParameters parameters = getCalculationParameters();
                 PrayerTimes tomorrowPrayers = new PrayerTimes(coordinates, tomorrowDate, parameters);
 
                 android.util.Log.d("PrayerCalc", "getNextPrayerTime: tomorrow's Fajr = " + tomorrowPrayers.fajr);
@@ -161,7 +172,7 @@ public class PrayerTimeCalculator {
 
                 Coordinates coordinates = new Coordinates(latitude, longitude);
                 DateComponents tomorrowDate = DateComponents.from(tomorrow.getTime());
-                CalculationParameters parameters = CalculationMethod.MUSLIM_WORLD_LEAGUE.getParameters();
+                CalculationParameters parameters = getCalculationParameters();
                 PrayerTimes tomorrowPrayers = new PrayerTimes(coordinates, tomorrowDate, parameters);
 
                 prayerTime = tomorrowPrayers.fajr;

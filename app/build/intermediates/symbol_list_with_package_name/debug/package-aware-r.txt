@@ -2048,18 +2048,22 @@ color primary_text_default_material_dark
 color primary_text_default_material_light
 color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
+color radio_button_color
+color radio_text_color
 color ripple_material_dark
 color ripple_material_light
 color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
+color switch_thumb_color
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light
 color switch_thumb_material_dark
 color switch_thumb_material_light
 color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
+color switch_track_color
 color tooltip_background_dark
 color tooltip_background_light
 color white
@@ -3042,6 +3046,7 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable prayer_card_bg
 drawable prayer_gradient_bg
+drawable radio_button_bg
 drawable status_indicator
 drawable test_level_drawable
 drawable tooltip_frame_dark
@@ -3322,6 +3327,7 @@ id list_item
 id locationText
 id lockScreenLayout
 id m3_side_sheet
+id madhabRadioGroup
 id marquee
 id masked
 id match_constraint
@@ -3442,6 +3448,8 @@ id pressed
 id progress_circular
 id progress_horizontal
 id radio
+id radioHanafi
+id radioShafi
 id ratio
 id rectangles
 id reverseSawtooth
@@ -3618,6 +3626,7 @@ id weatherLoadingProgress
 id weatherLoadingText
 id weatherNextUpdate
 id weatherOverlay
+id weatherSwitch
 id weatherTemp
 id west
 id wide

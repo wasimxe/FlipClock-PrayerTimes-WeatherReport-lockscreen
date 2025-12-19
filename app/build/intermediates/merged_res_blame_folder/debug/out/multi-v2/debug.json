@@ -3742,6 +3742,25 @@
                     }
                 },
                 {
+                    "source": "D:\\workspace\\android\\Projects\\FlipClock-PrayerTimes-WeatherReport-lockscreen\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "2,8",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,292",
+                        "endLines": "6,15",
+                        "endColumns": "12,12",
+                        "endOffsets": "286,730"
+                    },
+                    "to": {
+                        "startLines": "2130,5482",
+                        "startColumns": "4,4",
+                        "startOffsets": "152586,385781",
+                        "endLines": "2134,5489",
+                        "endColumns": "12,12",
+                        "endOffsets": "152817,386219"
+                    }
+                },
+                {
                     "source": "C:\\Users\\TanxeStudio\\.gradle\\caches\\transforms-3\\892b94bee70b3d7683fb77d96474e1e1\\transformed\\jetified-startup-runtime-1.1.1\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2",
@@ -3873,22 +3892,20 @@
                     }
                 },
                 {
-                    "source": "D:\\workspace\\android\\Projects\\aod\\app\\src\\main\\res\\values\\styles.xml",
+                    "source": "D:\\workspace\\android\\Projects\\FlipClock-PrayerTimes-WeatherReport-lockscreen\\app\\src\\main\\res\\values\\colors.xml",
                     "from": {
-                        "startLines": "2,8",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,292",
-                        "endLines": "6,15",
-                        "endColumns": "12,12",
-                        "endOffsets": "286,730"
+                        "startLines": "2,4,3",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,135,95",
+                        "endColumns": "39,38,39",
+                        "endOffsets": "90,169,130"
                     },
                     "to": {
-                        "startLines": "2130,5482",
-                        "startColumns": "4,4",
-                        "startOffsets": "152586,385781",
-                        "endLines": "2134,5489",
-                        "endColumns": "12,12",
-                        "endOffsets": "152817,386219"
+                        "startLines": "638,702,964",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "32659,37229,56914",
+                        "endColumns": "39,38,39",
+                        "endOffsets": "32694,37263,56949"
                     }
                 },
                 {
@@ -3982,23 +3999,6 @@
                         "endLines": "1781,1813,1850,11285,11289",
                         "endColumns": "56,64,63,24,24",
                         "endOffsets": "118605,120258,122172,711095,711244"
-                    }
-                },
-                {
-                    "source": "D:\\workspace\\android\\Projects\\aod\\app\\src\\main\\res\\values\\colors.xml",
-                    "from": {
-                        "startLines": "2,4,3",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "55,135,95",
-                        "endColumns": "39,38,39",
-                        "endOffsets": "90,169,130"
-                    },
-                    "to": {
-                        "startLines": "638,702,964",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "32659,37229,56914",
-                        "endColumns": "39,38,39",
-                        "endOffsets": "32694,37263,56949"
                     }
                 },
                 {

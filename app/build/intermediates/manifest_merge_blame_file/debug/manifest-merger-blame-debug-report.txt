@@ -9,41 +9,41 @@
 9        android:targetSdkVersion="34" />
 10
 11    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-11-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:5:5-78
-11-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:5:22-75
+11-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:5:5-78
+11-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:5:22-75
 12    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
-12-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:6:5-75
-12-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:6:22-72
+12-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:6:5-75
+12-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:6:22-72
 13    <uses-permission android:name="android.permission.WAKE_LOCK" />
-13-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:7:5-68
-13-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:7:22-65
+13-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:7:5-68
+13-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:7:22-65
 14    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-14-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:8:5-81
-14-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:8:22-78
+14-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:8:5-81
+14-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:8:22-78
 15    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
-15-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:9:5-85
-15-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:9:22-82
+15-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:9:5-85
+15-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:9:22-82
 16    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-16-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:10:5-77
-16-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:10:22-74
+16-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:10:5-77
+16-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:10:22-74
 17    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-17-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:11:5-77
-17-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:11:22-74
+17-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:11:5-77
+17-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:11:22-74
 18    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-18-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:12:5-79
-18-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:12:22-76
+18-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:12:5-79
+18-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:12:22-76
 19    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-19-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:13:5-81
-19-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:13:22-78
+19-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:13:5-81
+19-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:13:22-78
 20    <uses-permission android:name="android.permission.INTERNET" />
-20-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:14:5-67
-20-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:14:22-64
+20-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:14:5-67
+20-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:14:22-64
 21    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-21-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:15:5-79
-21-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:15:22-76
+21-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:15:5-79
+21-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:15:22-76
 22    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
-22-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:16:5-73
-22-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:16:22-70
+22-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:16:5-73
+22-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:16:22-70
 23
 24    <permission
 24-->[androidx.core:core:1.9.0] C:\Users\TanxeStudio\.gradle\caches\transforms-3\543740e42155bb89dcbd6bdda0f43b68\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
@@ -57,94 +57,94 @@
 28-->[androidx.core:core:1.9.0] C:\Users\TanxeStudio\.gradle\caches\transforms-3\543740e42155bb89dcbd6bdda0f43b68\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
 29
 30    <application
-30-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:18:5-66:19
+30-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:18:5-66:19
 31        android:allowBackup="true"
-31-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:19:9-35
+31-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:19:9-35
 32        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 32-->[androidx.core:core:1.9.0] C:\Users\TanxeStudio\.gradle\caches\transforms-3\543740e42155bb89dcbd6bdda0f43b68\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
 33        android:debuggable="true"
 34        android:extractNativeLibs="false"
 35        android:icon="@mipmap/ic_launcher"
-35-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:20:9-43
+35-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:20:9-43
 36        android:label="Prayer Clock &amp; Weather"
-36-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:21:9-51
+36-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:21:9-51
 37        android:supportsRtl="true"
-37-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:22:9-35
+37-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:22:9-35
 38        android:theme="@style/AppTheme" >
-38-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:23:9-40
+38-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:23:9-40
 39        <activity
-39-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:25:9-33:20
+39-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:25:9-33:20
 40            android:name="com.flipclock.lockscreen.MainActivity"
-40-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:26:13-41
+40-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:26:13-41
 41            android:exported="true"
-41-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:27:13-36
+41-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:27:13-36
 42            android:screenOrientation="portrait" >
-42-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:28:13-49
+42-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:28:13-49
 43            <intent-filter>
-43-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:29:13-32:29
+43-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:29:13-32:29
 44                <action android:name="android.intent.action.MAIN" />
-44-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:30:17-69
-44-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:30:25-66
+44-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:30:17-69
+44-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:30:25-66
 45
 46                <category android:name="android.intent.category.LAUNCHER" />
-46-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:31:17-77
-46-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:31:27-74
+46-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:31:17-77
+46-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:31:27-74
 47            </intent-filter>
 48        </activity>
 49        <activity
-49-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:35:9-42:54
+49-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:35:9-42:54
 50            android:name="com.flipclock.lockscreen.LockScreenActivity"
-50-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:36:13-47
+50-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:36:13-47
 51            android:excludeFromRecents="true"
-51-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:37:13-46
+51-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:37:13-46
 52            android:launchMode="singleInstance"
-52-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:38:13-48
+52-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:38:13-48
 53            android:screenOrientation="landscape"
-53-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:39:13-50
+53-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:39:13-50
 54            android:showOnLockScreen="true"
-54-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:40:13-44
+54-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:40:13-44
 55            android:taskAffinity=""
-55-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:41:13-36
+55-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:41:13-36
 56            android:theme="@style/LockScreenTheme" />
-56-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:42:13-51
+56-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:42:13-51
 57
 58        <service
-58-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:44:9-47:40
+58-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:44:9-47:40
 59            android:name="com.flipclock.lockscreen.LockScreenService"
-59-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:45:13-46
+59-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:45:13-46
 60            android:enabled="true"
-60-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:46:13-35
+60-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:46:13-35
 61            android:exported="false" />
-61-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:47:13-37
+61-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:47:13-37
 62        <service
-62-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:49:9-56:19
+62-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:49:9-56:19
 63            android:name="com.flipclock.lockscreen.NotificationListener"
-63-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:50:13-49
+63-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:50:13-49
 64            android:exported="true"
-64-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:52:13-36
+64-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:52:13-36
 65            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" >
-65-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:51:13-87
+65-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:51:13-87
 66            <intent-filter>
-66-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:53:13-55:29
+66-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:53:13-55:29
 67                <action android:name="android.service.notification.NotificationListenerService" />
-67-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:54:17-99
-67-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:54:25-96
+67-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:54:17-99
+67-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:54:25-96
 68            </intent-filter>
 69        </service>
 70
 71        <receiver
-71-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:58:9-65:20
+71-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:58:9-65:20
 72            android:name="com.flipclock.lockscreen.BootReceiver"
-72-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:59:13-41
+72-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:59:13-41
 73            android:enabled="true"
-73-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:60:13-35
+73-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:60:13-35
 74            android:exported="true" >
-74-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:61:13-36
+74-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:61:13-36
 75            <intent-filter>
-75-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:62:13-64:29
+75-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:62:13-64:29
 76                <action android:name="android.intent.action.BOOT_COMPLETED" />
-76-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:63:17-79
-76-->D:\workspace\android\Projects\aod\app\src\main\AndroidManifest.xml:63:25-76
+76-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:63:17-79
+76-->D:\workspace\android\Projects\FlipClock-PrayerTimes-WeatherReport-lockscreen\app\src\main\AndroidManifest.xml:63:25-76
 77            </intent-filter>
 78        </receiver>
 79
