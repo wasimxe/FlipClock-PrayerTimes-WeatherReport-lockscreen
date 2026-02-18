@@ -22,11 +22,21 @@ public class PrayerTimeCalculator {
     private PrayerTimes prayerTimes;
     private SunnahTimes sunnahTimes;
 
+    private int lastCalculatedDay = -1;
+
     public PrayerTimeCalculator(double latitude, double longitude, int madhab) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.madhab = madhab;
-        calculatePrayerTimes();
+        recalculate();
+    }
+
+    public void recalculate() {
+        int today = Calendar.getInstance().get(Calendar.DAY_OF_YEAR);
+        if (today != lastCalculatedDay) {
+            lastCalculatedDay = today;
+            calculatePrayerTimes();
+        }
     }
 
     private CalculationParameters getCalculationParameters() {
