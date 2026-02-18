@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     private View statusIndicator;
     private Button btnCustomColor;
     private LinearLayout permissionCard;
-    private SwitchCompat rotationSwitch, serviceToggle, volumeSwipeSwitch, weatherSwitch;
+    private SwitchCompat rotationSwitch, serviceToggle, volumeSwipeSwitch, weatherSwitch, islamicDateMinusOneSwitch;
     private RadioGroup madhabRadioGroup;
     private SeekBar brightnessLimitSeek;
     private TextView brightnessLimitValue;
@@ -89,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
         locationText = findViewById(R.id.locationText);
         weatherSwitch = findViewById(R.id.weatherSwitch);
         madhabRadioGroup = findViewById(R.id.madhabRadioGroup);
+        islamicDateMinusOneSwitch = findViewById(R.id.islamicDateMinusOneSwitch);
 
         Button btnPreview = findViewById(R.id.btnPreview);
         Button btnGrantPermission = findViewById(R.id.btnGrantPermission);
@@ -106,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
         serviceToggle.setChecked(isServiceRunning(LockScreenService.class));
         volumeSwipeSwitch.setChecked(prefs.getBoolean("volume_swipe_enabled", true));
         weatherSwitch.setChecked(prefs.getBoolean("weather_enabled", true));
+        islamicDateMinusOneSwitch.setChecked(prefs.getBoolean("islamic_date_minus_one", false));
 
         // Setup madhab radio group (0 = Shafi, 1 = Hanafi)
         int savedMadhab = prefs.getInt("madhab", 0);
@@ -144,6 +146,11 @@ public class MainActivity extends AppCompatActivity {
             prefs.edit().putInt("madhab", madhab).apply();
             String madhabName = (madhab == 1) ? "Hanafi" : "Shafi";
             Toast.makeText(this, "Asr calculation: " + madhabName, Toast.LENGTH_SHORT).show();
+        });
+
+        islamicDateMinusOneSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            prefs.edit().putBoolean("islamic_date_minus_one", isChecked).apply();
+            Toast.makeText(this, "Islamic date -1 day " + (isChecked ? "enabled" : "disabled"), Toast.LENGTH_SHORT).show();
         });
 
         serviceToggle.setOnCheckedChangeListener((buttonView, isChecked) -> {

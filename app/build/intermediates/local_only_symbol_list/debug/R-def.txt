@@ -42,6 +42,7 @@ id forecastContainer
 id hexValue
 id hourOnes
 id hourTens
+id islamicDateMinusOneSwitch
 id leftInfoContainer
 id leftInfoLabel
 id leftInfoValue

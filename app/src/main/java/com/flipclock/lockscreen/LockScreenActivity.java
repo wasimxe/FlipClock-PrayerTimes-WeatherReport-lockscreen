@@ -466,6 +466,21 @@ public class LockScreenActivity extends Activity {
                 android.icu.util.IslamicCalendar islamicCal = new android.icu.util.IslamicCalendar();
                 islamicCal.setTimeInMillis(calendar.getTimeInMillis());
 
+                // Optionally subtract 1 day to correct Islamic date offset
+                boolean islamicDateMinusOne = prefs.getBoolean("islamic_date_minus_one", false);
+                if (islamicDateMinusOne) {
+                    islamicCal.add(android.icu.util.IslamicCalendar.DAY_OF_MONTH, -1);
+                }
+
+                // Islamic date changes at Maghrib (sunset), not at midnight.
+                // After Maghrib, advance to the next Islamic day.
+                if (prayerCalculator != null) {
+                    java.util.Date maghribTime = prayerCalculator.getMaghribDate();
+                    if (maghribTime != null && calendar.getTimeInMillis() >= maghribTime.getTime()) {
+                        islamicCal.add(android.icu.util.IslamicCalendar.DAY_OF_MONTH, 1);
+                    }
+                }
+
                 int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK) - 1;
                 int islamicDay = islamicCal.get(android.icu.util.IslamicCalendar.DAY_OF_MONTH);
                 int islamicMonth = islamicCal.get(android.icu.util.IslamicCalendar.MONTH);

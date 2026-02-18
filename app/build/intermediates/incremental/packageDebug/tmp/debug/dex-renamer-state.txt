@@ -1,4 +1,4 @@
-#Fri Dec 19 11:34:22 PKT 2025
+#Wed Feb 18 23:56:32 PKT 2026
 base.2=D\:\\workspace\\android\\Projects\\FlipClock-PrayerTimes-WeatherReport-lockscreen\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\9\\classes.dex
 path.2=9/classes.dex
 base.1=D\:\\workspace\\android\\Projects\\FlipClock-PrayerTimes-WeatherReport-lockscreen\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex

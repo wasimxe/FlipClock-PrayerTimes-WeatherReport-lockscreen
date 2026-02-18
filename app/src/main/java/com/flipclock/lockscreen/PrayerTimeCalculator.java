@@ -286,6 +286,10 @@ public class PrayerTimeCalculator {
         return "";
     }
 
+    public Date getMaghribDate() {
+        return prayerTimes.maghrib;
+    }
+
     public String[] getAllPrayerTimesFormatted() {
         return new String[]{
                 getUrduPrayerName(Prayer.FAJR) + ": " + getPrayerTime(Prayer.FAJR),
